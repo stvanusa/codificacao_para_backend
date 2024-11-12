@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Empréstimo</title>
+</head>
+<body>
+
+    <h1>Formulário de Empréstimo</h1>
+
+    <form action="exibir.php" method="POST">
+        <div>
+            <label for="id">ID do Empréstimo:</label>
+            <input type="text" id="id" name="id" required>
+        </div>
+
+        <div>
+            <label for="data_retirada">Data de Retirada:</label>
+            <input type="date" id="data_retirada" name="data_retirada" required>
+        </div>
+
+        <div>
+            <label for="data_devolucao">Data de Devolução:</label>
+            <input type="date" id="data_devolucao" name="data_devolucao" required>
+        </div>
+
+        <div>
+            <label for="multa">Valor da Multa (se houver):</label>
+            <input type="number" step="0.01" id="multa" name="multa" min="0" value="0">
+        </div>
+
+        <div>
+            <label for="membro_cpf">CPF do Membro:</label>
+            <input type="text" id="membro_cpf" name="membro_cpf" required>
+        </div>
+
+        <div>
+            <button type="submit">Registrar Empréstimo</button>
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Cadastrar Empréstimo</h1>
+    <form action="processar_cadastro.php" method="POST">
+        <label for="livro_id">ID do Livro:</label>
+        <input type="number" name="livro_id" id="livro_id" required><br><br>
+
+        <label for="membro_id">ID do Membro:</label>
+        <input type="number" name="membro_id" id="membro_id" required><br><br>
+
+        <label for="data_emprestimo">Data de Empréstimo:</label>
+        <input type="date" name="data_emprestimo" id="data_emprestimo" required><br><br>
+
+        <label for="data_devolucao">Data de Devolução:</label>
+        <input type="date" name="data_devolucao" id="data_devolucao" required><br><br>
+
+        <input type="submit" value="Cadastrar Empréstimo">
+    </form>
+</body>
+</html>
