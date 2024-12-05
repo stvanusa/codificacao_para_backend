@@ -1,21 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    <form action="{{ route('posts.store') }}" method="post">
+@section('content')
+
+    <form action="{{ route('posts.store') }}" method="post" id = "formCreatePost" enctype="multipart/form-data">
         @csrf
-        <label for="">Titulo</label>
-        <input type="text" name="titulo" id="titulo">
-        <label for="">Conteudo</label>
-        <textarea name="conteudo" id="conteudo"></textarea>
-        <button type="submit">Salvar</button>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" name="titulo" id="titulo" class="form-control form-control-lg">
+        </div>
+        
+        <div class="mb-3">
+            <label for="conteudo" class="form-label">Conteúdo</label>
+            <textarea name="conteudo" id="conteudo" class="form-control form-control-lg" rows="5"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="" class="form-label">Foto</label>
+            <input type="file" name="foto" id="foto">
+        </div>
+        <button id="btnCadastrar" type="submit" class="btn btn-primary">Salvar</button>
     </form>
+    <script>
+        var titulo = document.getElementById('titulo').value;
+        var foto = document.getElementById('foto')
+        var formCreatePost = document.getElementById('formCreatePost')
 
+        formCreatePost.addEventListener("submit", function(event) {
 
-</body>
-</html>
+            if(!foto.files || !foto.files[0]){
+                alert('Foto obrigatória!')
+                event.preventDefault();
+            }
+        });
+       
+        
+    </script>
+    @endsection

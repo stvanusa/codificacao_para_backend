@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\SobreController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,3 +15,4 @@ Route::delete('posts/excluir/{id}',[PostController::class,'destroy'])->name('pos
 Route::get('posts/editar/{id}',[PostController::class,'edit'])->name('posts.edit');
 Route::put('posts/atualizar/{id}',[PostController::class,'update'])->name('posts.update');
 Route::get('posts/visualizar/{id}',[PostController::class,'show'])->name('posts.show');
+Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');

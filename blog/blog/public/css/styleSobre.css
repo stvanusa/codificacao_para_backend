@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #c51717;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.sobre {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sobre h2 {
+    color: #1f1f1f;
+}
+
+.sobre ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sobre ul li {
+    margin: 10px 0;
+}
+
+.sobre a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.sobre a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #e94b4b;
+    color: #fff;
+    text-align: center;
+    padding: 4px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* Estilo para o texto dentro do footer */
+footer p {
+    font-size: 1rem;
+}

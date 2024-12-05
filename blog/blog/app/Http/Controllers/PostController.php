@@ -30,7 +30,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create($request->all());
+        $foto = $request->foto->store('fotos','public');
+    //Post::create($request->all()); 
+
+        Post::create([
+            'titulo'=>$request->titulo,
+            'conteudo'=>$request->conteudo,
+            'foto'=>$foto
+        ]);
+
         return redirect()->route('posts.index');
     }
 
@@ -55,12 +63,22 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+      
+
+     public function update(Request $request, string $id)
     {
+        $foto = $request->foto->store('fotos','public');
+
         $post = Post::find($id);
-        $post->update($request->all());
+        $post->update([
+            'titulo' => $request->titulo,
+            'conteudo' => $request->conteudo,
+            'foto' => $foto
+        ]);
         return redirect()->route('posts.index');   
     }
+ 
+  
 
     /**
      * Remove the specified resource from storage.

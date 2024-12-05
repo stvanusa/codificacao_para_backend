@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="{{ route('posts.update', $post->id) }}" method="post">
+@extends('layouts.app')
+
+@section('content') 
+    <form action="{{ route('posts.update', $post->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <label for="">Titulo</label>
-        <input type="text" name="titulo" id="titulo" value="{{ $post->titulo }}">
-        <label for="">Conteudo</label>
-        <textarea name="conteudo" id="conteudo" >{{ $post->conteudo }}</textarea>
-        <button type="submit">Salvar</button>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" name="titulo" id="titulo" class="form-control form-control-lg" value="{{ $post->titulo }}">
+        </div>
+        
+        <div class="mb-3">
+            <label for="conteudo" class="form-label">Conteúdo</label>
+            <textarea name="conteudo" id="conteudo" class="form-control form-control-lg" rows="5">{{ $post->conteudo }}</textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="" class="form-label">Foto</label>
+            <input type="file" name="foto">
+            <img src="{{ asset('storage/'.$post->foto)}}" alt="" style="width: 100px; height: 100px;">
+        </div>
+        <button id="btnCadastrar" type="submit" class="btn btn-primary">Salvar</button>
     </form>
-
-</body>
-</html>
+@endsection

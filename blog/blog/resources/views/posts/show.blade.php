@@ -6,11 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    
-<h1>Dados da postagem</h1>
+    <h1>Dados da postagem</h1>
     <p>Titulo: {{ $post->titulo }} </p>
     <p>Conteudo: {{ $post->conteudo }} </p>
-
 </body>
 </html>
-
