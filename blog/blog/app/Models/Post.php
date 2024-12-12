@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Post extends Model
 {
-    protected $table = 'posts';
+    protected $fillable = ['titulo','conteudo', 'foto'];
 
-    protected $fillable = ['titulo', 'conteudo', 'foto'];  
+    public function comentario(){
+        return $this->hasMany(Comentario::class);
+    }
 }
