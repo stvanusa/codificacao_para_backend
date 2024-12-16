@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\ComentarioController;
-use App\Models\Comentario;
 use App\Http\Controllers\CategoriaController;
 
 Route::get('/', function () {

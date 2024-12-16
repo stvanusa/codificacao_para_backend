@@ -17,7 +17,7 @@
             <textarea name="descricao" id="descricao" class="form-control form-control-lg" rows="5" placeholder="Digite a descrição da categoria" required>{{ old('descricao', $categoria->descricao) }}</textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
 </div>
 @endsection
