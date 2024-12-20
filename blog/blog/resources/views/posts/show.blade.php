@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Dados da postagem</h1>
-    <p>Titulo: {{ $post->titulo }} </p>
-    <p>Conteudo: {{ $post->conteudo }} </p>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('title', 'Dados da Postagem')
+
+@section('content')
+    <h1>Dados da Postagem</h1>
+    <p>Título: {{ $post->titulo }}</p>
+    <p>Conteúdo: {{ $post->conteudo }}</p>
+@endsection

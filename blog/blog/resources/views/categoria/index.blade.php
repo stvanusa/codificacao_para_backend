@@ -45,7 +45,7 @@
                         <!-- Atualizar -->
                         <button type="button">
                             <a href="{{ route('categoria.update', $categoria->id) }}">
-                                <img src="{{ asset('storage/icones/update.png') }}" alt="Atualizar" style="width: 20px; height: 20px;">
+                                <img src="{{ asset('storage/icones/visualizar.png') }}" alt="Atualizar" style="width: 20px; height: 20px;">
                             </a>
                         </button>
                     </td>
