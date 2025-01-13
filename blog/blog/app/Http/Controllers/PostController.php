@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Models\Comentario;
 
 class PostController extends Controller
@@ -26,7 +27,8 @@ class PostController extends Controller
     public function create()
     {
         $categorias = Categoria::all();
-        return view('posts.create', compact('categorias'));
+        $tags = Tag::all();
+        return view('posts.create', compact('categorias','tags'));
     }
 
     /**
@@ -37,12 +39,14 @@ class PostController extends Controller
         $foto = $request->foto->store('fotos','public');
     //Post::create($request->all()); 
 
-        Post::create([
+        $post = Post::create([
             'titulo'=>$request->titulo,
             'conteudo'=>$request->conteudo,
             'foto'=>$foto,
             'categoria_id'=>$request->categoria_id
         ]);
+
+        $post->tags()->sync($request->tags);
 
         return redirect()->route('posts.index');
     }

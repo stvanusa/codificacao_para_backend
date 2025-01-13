@@ -17,6 +17,16 @@
         </select>    
         </div>
 
+        <div class="mb-3">
+            <label for="">Tag</label>
+            @foreach ($tags as $tag)
+            <input type="checbox" name="tags" value="{{$tag->id}}">
+            <label for="">{{$tag->nome}}</label>
+                
+            @endforeach
+        
+        </div>
+
 
         <div class="mb-3">
             <label for="conteudo" class="form-label">Conteúdo</label>
@@ -28,6 +38,7 @@
             <input type="file" name="foto" id="foto">
         </div>
         <button id="btnCadastrar" type="submit" class="btn btn-primary">Salvar</button>
+
     </form>
     <script>
         var titulo = document.getElementById('titulo').value;
